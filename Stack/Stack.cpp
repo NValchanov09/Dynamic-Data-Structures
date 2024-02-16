@@ -120,9 +120,3 @@ void Stack<Type> :: clear()
     while(!empty())
         pop();
 }
-
-int main()
-{
-
-	return 0;
-}
