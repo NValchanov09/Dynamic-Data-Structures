@@ -18,7 +18,6 @@ public:
 template <typename Type>
 Node<Type> :: Node()
 {
-    data = 0;
     next = nullptr;
 }
 
