@@ -60,6 +60,34 @@ I have implemented most of the commonly used commands for Linked List. Here is t
 |empty()|Returns true / false whether the Linked List is empty or not.|O(1)|O(1)|
 |front()|Returns the value of the first element of the Linked List.|O(1)|O(1)|
 |begin()|Returns the address to the first element of the Linked List.|O(1)|O(1)|
-|print()|Prints all elements of the Linked List (from the head to the tail).|O(N)|O(1)|
 |LinkedList()|Basic Constructor - gives initial values.|O(1)|O(1)|
 |~LinkedList()|Basic Destructor - deletes the whole Linked List.|O(N)|O(1)|
+
+
+## 4. How to use the tester?
+
+The tester can be found in the LinkedList-Test.cpp file. Compile the program. You will be greated with a message. 
+Use the instructions below to use the tester right :
+|Command|Semantic|
+|-------|--------|
+|create \<Type\>|Creates a Linked List with the given type (Works with "int", "char" and "string" only).|
+|terminate|Terminates the tester|
+|insert \<value\>|Inserts the value to the beginning of the Linked List.|
+|remove|Removes the first element of the Linked List.|
+|accessAt \<pos\>|Returns the value at position pos.|
+|insertAt \<value\> \<pos\>|Inserts the value at position pos.|
+|removeAt \<pos\>|Removes the element at position pos.|
+|clear|Removes all elements in the Linked List.|
+|size|Returns the size of the Linked List.|
+|empty|Returns true / false whether the Linked List is empty or not.|
+|front|Returns the value of the first element.|
+|begin|Returns the address of the Linked List|
+|print|Prints all elements of the Linked List|
+
+> [!CAUTION]
+> The tester only works with integer, character and string types
+
+Here's an example of a conversationn between the tester and the user.
+
+
+<ul class="comments_list"><img src = "https://github.com/NValchanov09/Dynamic-Data-Structures/assets/158312030/4783b388-730b-4c9b-970c-7bb5ab382e33" style = " display:flex; justify-content: center; align-items: center; width: 750px;"/></ul>
