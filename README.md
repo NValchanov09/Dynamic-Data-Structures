@@ -8,6 +8,7 @@ stack, queue, linked list, etc.
 
 ## 2. Contents
   - Linked List
+  - Stack
   - Vector
   - Queue 
   - Deque (Double-ended queue)
