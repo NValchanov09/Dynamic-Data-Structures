@@ -1,13 +1,11 @@
-# Linked List
-
-
+# Linked List 🔗
 
 
 ## 1. What is a linked list?
 
-A linked list is a linear data structure. However the linked list doesn't use a contiguous memory, it uses the idea of "linking".
+A linked list is a linear data structure. However the linked list doesn't use a contiguous memory, it uses the idea of "linking". 
 
-"Linking" consists of connecting each element with the next using pointers. This means we don't need to use contiguous memory cells. 
+"Linking" consists of connecting each element with the next using pointers. This means we don't need to use contiguous memory cells.
 
 <ul class="comments_list"><img src = "https://github.com/NValchanov09/Dynamic-Data-Structures/assets/158312030/bc6290e2-f54c-4436-bff5-080bef0ca72e" style = " display:flex; justify-content: center; align-items: center; width: 800px;"/></ul>
 <!--
@@ -17,30 +15,30 @@ A linked list is a linear data structure. However the linked list doesn't use a 
 ## 2. Linked List VS Array
 
 ### 2.1. Array
- - Advantages :
-   - Contiguous memory locations makes the access to an element easy by using address calculations - O(1) time complexity.
-   - Uses less memory - O(N) memory.
- - Disadvantages :
-   - Insertion and deletion of an element take longer - O(N) time complexity and O(N) memory.
-   - The size of an array is fixed.
+ - Advantages 👍:
+   - Contiguous memory locations makes the access to an element easy by using address calculations - O(1) time complexity. 
+   - Uses less memory - O(N) memory. 
+ - Disadvantages 👎 :
+   - Insertion and deletion of an element take longer - O(N) time complexity and O(N) memory. 
+   - The size of an array is fixed. 
 
 ### 2.2. Linked List
- - Advantages :
-   - Fast insertion and deletion of an element - O(1) time complexity and O(1) memory.
-   - A linked list has dynamic size.
- - Disadvantages :
-   - Accessing an element requires to traverse the whole linked list - O(N) time complexity.
-   - Uses 2 times more memory (to store pointers to the next element) - O(2*N) memory.
+ - Advantages 👍 :
+   - Fast insertion and deletion of an element - O(1) time complexity and O(1) memory. 
+   - A linked list has dynamic size. 
+ - Disadvantages 👎 :
+   - Accessing an element requires to traverse the whole linked list - O(N) time complexity. 
+   - Uses 2 times more memory (to store pointers to the next element) - O(2*N) memory. 
 
   >[!NOTE]
   > Linked Lists and Arrays are both very similar and very different. They use different amounts of memory and time for each operation.
   >
-  > You should choose the data strucutures which helps you solve the problem.
+  > You should choose the data strucutures which helps you solve the problem. 🧠
 
 ## To summarise :
   
   >[!IMPORTANT]
-  > Using a Linked List or an Array depends on the problem!
+  > Using a Linked List or an Array depends on the problem! 👈
 
 
 ## 3. The Implementation
@@ -64,10 +62,10 @@ I have implemented most of the commonly used commands for Linked List. Here is t
 |~LinkedList()|Basic Destructor - deletes the whole Linked List.|O(N)|O(1)|
 
 
-## 4. How to use the tester?
+## 4. How to use the tester? 
 
 The tester can be found in the LinkedList-Test.cpp file. Compile the program. You will be greated with a message. 
-Use the instructions below to use the tester right :
+Use the instructions below to use the tester right : ❓
 |Command|Semantic|
 |-------|--------|
 |create \<Type\>|Creates a Linked List with the given type (Works with "int", "char" and "string" only).|
@@ -82,12 +80,13 @@ Use the instructions below to use the tester right :
 |empty|Returns true / false whether the Linked List is empty or not.|
 |front|Returns the value of the first element.|
 |begin|Returns the address of the Linked List|
-|print|Prints all elements of the Linked List|
 
 > [!CAUTION]
-> The tester only works with integer, character and string types
+> The tester only works with integer, character and string types ❗
 
-Here's an example of a conversationn between the tester and the user.
+> [!IMPORTANT]
+> To use the tester you should also download the source code for the Dynamic Linked List(LinkedList.cpp). You also have to put them in the same folder and then run LinkedList-Test.cpp. 💜
 
+Here's an example of a conversationn between the tester and the user. 👇
 
-<ul class="comments_list"><img src = "https://github.com/NValchanov09/Dynamic-Data-Structures/assets/158312030/4783b388-730b-4c9b-970c-7bb5ab382e33" style = " display:flex; justify-content: center; align-items: center; width: 750px;"/></ul>
+<ul class="comments_list"><img src = "https://github.com/NValchanov09/Dynamic-Data-Structures/assets/158312030/752665ed-f6e8-47a1-880e-540c6f73d0c0" style = " display:flex; justify-content: center; align-items: center; width: 750px;"/></ul>
