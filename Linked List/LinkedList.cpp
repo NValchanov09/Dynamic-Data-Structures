@@ -8,7 +8,7 @@ class Node
 public:
 
     Type data;
-    Node *next;
+    Node* next;
 
     Node();
 };
@@ -18,7 +18,6 @@ public:
 template <typename Type>
 Node<Type> :: Node()
 {
-    data = 0;
     next = nullptr;
 }
 
@@ -37,7 +36,7 @@ public:
     bool empty();
     int size();
     Type front();
-    Type* begin();
+    Node<Type>* begin();
     void insert(Type);
     void remove();
     void insertAt(Type, int);
@@ -88,10 +87,10 @@ Type LinkedList<Type> :: front()
     return head -> data;
 }
 
-/// Return a pointer / iterator to the first element / head of the LinkedList
+/// Return a the address to the first element / head of the LinkedList
 
 template <typename Type>
-Type* LinkedList<Type> :: begin()
+Node<Type>* LinkedList<Type> :: begin()
 {
     return head;
 }
