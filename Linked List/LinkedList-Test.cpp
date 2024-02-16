@@ -41,6 +41,7 @@ public:
     void remove();
     void insertAt(Type, int);
     void removeAt(int);
+    Type accessAt(int);
     void clear();
     void print();
 };
@@ -202,6 +203,29 @@ void LinkedList<Type> :: print()
         Type data = ptr -> data;
         cout << data << " ";
         ptr = ptr -> next;
+    }
+}
+
+/// Returns the value at the given position
+
+template <typename Type>
+Type LinkedList<Type> :: accessAt(int pos)
+{
+    if(!(0 <= pos && pos < list_size))
+    {
+        cout << "Error : Position is out of range" << endl;
+        return 0;
+    }
+    else
+    {
+        Node<Type>* ptr = head;
+        int idx = 0;
+        while(idx < pos && ptr != nullptr)
+        {
+            idx++;
+            ptr = ptr -> next;
+        }
+        return ptr -> data;
     }
 }
 
@@ -549,6 +573,44 @@ void RemoveAt(string& type)
     cout << "The element has been removed from the given position successfully." << endl;
 }
 
+/// Returns the value at the given position
+
+void Access(string& type)
+{
+    if(created == false)
+    {
+        cout << "There is no existing LinkedList." << endl;
+        return;
+    }
+    if(type == "int")
+    {
+        int pos;
+        cin >> pos;
+
+        int value = list_int.accessAt(pos);
+
+        cout << "The value at position " << pos << " is " << value << endl;
+    }
+    else if(type == "char")
+    {
+        int pos;
+        cin >> pos;
+
+        char value = list_char.accessAt(pos);
+
+        cout << "The value at position " << pos << " is " << value << endl;
+    }
+    else if(type == "string")
+    {
+        int pos;
+        cin >> pos;
+
+        string value = list_str.accessAt(pos);
+
+        cout << "The value at position " << pos << " is " << value << endl;
+    }
+}
+
 /// Process the current command
 
 void Process_Command(string command, string& type)
@@ -600,6 +662,10 @@ void Process_Command(string command, string& type)
     else if(command == "removeAt")
     {
         RemoveAt(type);
+    }
+    else if(command == "access")
+    {
+        Access(type);
     }
     else
     {
