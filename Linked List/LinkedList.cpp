@@ -18,6 +18,7 @@ public:
 template <typename Type>
 Node<Type> :: Node()
 {
+    data = 0;
     next = nullptr;
 }
 
@@ -41,6 +42,7 @@ public:
     void remove();
     void insertAt(Type, int);
     void removeAt(int);
+    Type accessAt(int);
     void clear();
 };
 
@@ -189,6 +191,28 @@ void LinkedList<Type> :: clear()
 {
     while(!empty())
         remove();
+}
+
+/// Returns the value at the given position
+
+template <typename Type>
+Type LinkedList<Type> :: accessAt(int pos)
+{
+    if(!(0 <= pos && pos < list_size))
+    {
+        cout << "Error : Position is out of range" << endl;
+    }
+    else
+    {
+        Node<Type>* ptr = head;
+        int idx = 0;
+        while(idx < pos && ptr != nullptr)
+        {
+            idx++;
+            ptr = ptr -> next;
+        }
+        return ptr -> data;
+    }
 }
 
 int main()
