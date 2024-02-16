@@ -59,4 +59,4 @@ I have implemented most of the commonly used commands for Linked List. Here is t
 |begin()|Returns the address to the first element of the Linked List.|O(1)|O(1)|
 |print()|Prints all elements of the Linked List (from the head to the tail).|O(N)|O(1)|
 |LinkedList()|Basic Constructor - gives initial values.|O(1)|O(1)|
-|~LinkedList()|Basic Deconstructor - deletes the whole Linked List.|O(N)|O(1)|
+|~LinkedList()|Basic Destructor - deletes the whole Linked List.|O(N)|O(1)|
