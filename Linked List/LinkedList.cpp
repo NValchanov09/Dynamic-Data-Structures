@@ -40,6 +40,8 @@ public:
     Type* begin();
     void insert(Type);
     void remove();
+    void insertAt(Type, int);
+    void removeAt(int);
     void clear();
 };
 
@@ -114,6 +116,71 @@ void LinkedList<Type> :: remove()
     head = head -> next;
     delete ptr;
     list_size--;
+}
+
+/// Inserts the value at the given position
+
+template <typename Type>
+void LinkedList<Type> :: insertAt(Type value, int pos)
+{
+    if(!(0 <= pos && pos <= list_size))
+    {
+        cout << "Error : Position out of range." << endl;
+        return;
+    }
+    if(pos == 0)
+    {
+        insert(value);
+    }
+    else
+    {
+        Node<Type>* ptr = new Node<Type>();
+        ptr -> data = value;
+        ptr -> next = nullptr;
+
+        Node<Type>* tmp = head;
+        int idx = 0;
+
+        while(idx < pos - 1 && tmp != nullptr)
+        {
+            tmp = tmp -> next;
+            idx++;
+        }
+
+        ptr -> next = tmp -> next;
+        tmp -> next = ptr;
+        list_size++;
+    }
+}
+
+/// Removes the element at the given position
+
+template <typename Type>
+void LinkedList<Type> :: removeAt(int pos)
+{
+    if(!(0 <= pos && pos < list_size))
+    {
+        cout << "Error : Position is out of range" << endl;
+        return;
+    }
+    if(pos == 0)
+    {
+        remove();
+    }
+    else
+    {
+        Node<Type>* tmp = head;
+        int idx = 0;
+        while(idx < pos - 1 && tmp != nullptr)
+        {
+            tmp = tmp -> next;
+            idx++;
+        }
+        Node<Type>* ptr = tmp -> next;
+        tmp -> next = tmp -> next -> next;
+        delete ptr;
+        list_size--;
+    }
 }
 
 /// Clears the LinkedList / Removes all elements
