@@ -235,51 +235,6 @@ void Front(string& type)
     }
 }
 
-/// Print the whole LinkedList
-
-void Print(string& type)
-{
-    if(created == false)
-    {
-        cout << "There is no existing LinkedList." << endl;
-        return;
-    }
-
-    bool lamp = false;
-
-    if(type == "int")
-    {
-        if(!list_int.empty())
-        {
-            lamp = true;
-            cout << "The LinkedList contains : " << endl;
-            list_int.print();
-        }
-    }
-    else if(type == "char")
-    {
-        if(!list_char.empty())
-        {
-            lamp = true;
-            cout << "The LinkedList contains : " << endl;
-            list_char.print();
-        }
-    }
-    else if(type == "string")
-    {
-        if(!list_str.empty())
-        {
-            lamp = true;
-            cout << "The LinkedList contains : " << endl;
-            list_str.print();
-        }
-    }
-    if(lamp == false)
-    {
-        cout << "The LinkedList is empty." << endl;
-    }
-}
-
 /// Inserts the value at the given position
 
 void InsertAt(string& type)
@@ -424,10 +379,6 @@ void Process_Command(string command, string& type)
     else if(command == "begin")
     {
         Begin(type);
-    }
-    else if(command == "print")
-    {
-        Print(type);
     }
     else if(command == "insertAt")
     {
