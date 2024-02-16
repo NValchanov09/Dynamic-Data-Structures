@@ -50,8 +50,11 @@ The source code includes comments.
 I have implemented most of the commonly used commands for Linked List. Here is table of all the commands which are included :
 |Name of the command|Semantic|Time complexity|Space Complexity|
 |-------------------|--------|---------------|----------------|
-|insert(Type value)|Inserts the given value to the beginning of the Linked List.|O(1)|O(1)|
+|insert(Type value)|Inserts the value to the beginning of the Linked List.|O(1)|O(1)|
 |remove()|Removes the first element of the Linked List.|O(1)|O(1)|
+|accessAt(int pos)|Returns the value at position pos|O(N)|O(1)|
+|insertAt(Type value, int pos)|Inserts the value at position pos|O(N)|O(1)|
+|removeAt(int pos)|Removes the element at position pos|O(N)|O(1)|
 |clear()|Removes all elements in the Linked List.|O(N)|O(1)|
 |size()|Returns the size of the Linked List.|O(1)|O(1)|
 |empty()|Returns true / false whether the Linked List is empty or not.|O(1)|O(1)|
