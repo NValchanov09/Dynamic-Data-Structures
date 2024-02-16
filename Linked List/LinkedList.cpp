@@ -214,9 +214,3 @@ Type LinkedList<Type> :: accessAt(int pos)
         return ptr -> data;
     }
 }
-
-int main()
-{
-
-	return 0;
-}
