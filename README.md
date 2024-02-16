@@ -18,5 +18,4 @@ There are different folders for all unique data structures included in this repo
 Each folder contains :
   - Source code in C++ : The data structure with Constructor, Deconstructor and some of it's main functions (insert / remove and element, return the size, etc.). Comments in the code are included. 
   - Source code in C++ : Testing the data structure (Standard input and output)
-  - Text file : How to use the tester?
-  - Text file : How the data structure works?
+  - Text file : "How the data structure works?" and "How to use the tester?"
