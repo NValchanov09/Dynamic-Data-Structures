@@ -34,7 +34,7 @@ public:
     int size();
     void push(Type);
     void pop();
-    Type* begin();
+    Node<Type>* begin();
     void clear();
 };
 
@@ -107,7 +107,7 @@ Type Stack<Type> :: top()
 /// Returns the address of the stack_top of the Stack
 
 template <typename Type>
-Type* Stack<Type> :: begin()
+Node<Type>* Stack<Type> :: begin()
 {
     return stack_top;
 }
