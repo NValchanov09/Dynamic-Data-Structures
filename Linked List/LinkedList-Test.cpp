@@ -39,6 +39,8 @@ public:
     Node<Type>* begin();
     void insert(Type);
     void remove();
+    void insertAt(Type, int);
+    void removeAt(int);
     void clear();
     void print();
 };
@@ -113,6 +115,71 @@ void LinkedList<Type> :: remove()
     head = head -> next;
     delete ptr;
     list_size--;
+}
+
+/// Inserts the value at the given position
+
+template <typename Type>
+void LinkedList<Type> :: insertAt(Type value, int pos)
+{
+    if(!(0 <= pos && pos <= list_size))
+    {
+        cout << "Error : Position out of range." << endl;
+        return;
+    }
+    if(pos == 0)
+    {
+        insert(value);
+    }
+    else
+    {
+        Node<Type>* ptr = new Node<Type>();
+        ptr -> data = value;
+        ptr -> next = nullptr;
+
+        Node<Type>* tmp = head;
+        int idx = 0;
+
+        while(idx < pos - 1 && tmp != nullptr)
+        {
+            tmp = tmp -> next;
+            idx++;
+        }
+
+        ptr -> next = tmp -> next;
+        tmp -> next = ptr;
+        list_size++;
+    }
+}
+
+/// Removes the element at the given position
+
+template <typename Type>
+void LinkedList<Type> :: removeAt(int pos)
+{
+    if(!(0 <= pos && pos < list_size))
+    {
+        cout << "Error : Position is out of range" << endl;
+        return;
+    }
+    if(pos == 0)
+    {
+        remove();
+    }
+    else
+    {
+        Node<Type>* tmp = head;
+        int idx = 0;
+        while(idx < pos - 1 && tmp != nullptr)
+        {
+            tmp = tmp -> next;
+            idx++;
+        }
+        Node<Type>* ptr = tmp -> next;
+        tmp -> next = tmp -> next -> next;
+        delete ptr;
+        list_size--;
+    }
 }
 
 /// Clears the LinkedList / Removes all elements
@@ -415,6 +482,73 @@ void Print(string& type)
     }
 }
 
+/// Inserts the value at the given position
+
+void InsertAt(string& type)
+{
+    if(created == false)
+    {
+        cout << "There is no existing LinkedList." << endl;
+        return;
+    }
+
+    if(type == "int")
+    {
+        int value;
+        int pos;
+        cin >> value >> pos;
+
+        list_int.insertAt(value, pos);
+    }
+    else if(type == "char")
+    {
+        char value;
+        int pos;
+        cin >> value >> pos;
+
+        list_char.insertAt(value, pos);
+    }
+    else if(type == "string")
+    {
+        string value;
+        int pos;
+        cin >> value >> pos;
+        list_str.insertAt(value, pos);
+    }
+    cout << "The value has been added to given position of the LinkedList successfully." << endl;
+}
+
+/// Removes the element at the given position
+
+void RemoveAt(string& type)
+{
+    if(created == false)
+    {
+        cout << "There is no existing LinkedList." << endl;
+        return;
+    }
+
+    if(type == "int")
+    {
+        int pos;
+        cin >> pos;
+        list_int.removeAt(pos);
+    }
+    else if(type == "char")
+    {
+        int pos;
+        cin >> pos;
+        list_char.removeAt(pos);
+    }
+    else if(type == "string")
+    {
+        int pos;
+        cin >> pos;
+        list_str.removeAt(pos);
+    }
+    cout << "The element has been removed from the given position successfully." << endl;
+}
+
 /// Process the current command
 
 void Process_Command(string command, string& type)
@@ -458,6 +592,14 @@ void Process_Command(string command, string& type)
     else if(command == "print")
     {
         Print(type);
+    }
+    else if(command == "insertAt")
+    {
+        InsertAt(type);
+    }
+    else if(command == "removeAt")
+    {
+        RemoveAt(type);
     }
     else
     {
