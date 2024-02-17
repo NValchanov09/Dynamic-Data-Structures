@@ -22,6 +22,11 @@ void Terminate()
 
 void Create(string& type)
 {
+    if(created)
+    {
+        cout << "Error : Stack already created." << endl;
+        return;
+    }
     cin >> type;
 
     if(type == "int")
@@ -101,11 +106,11 @@ void Empty(string& type)
 
     if(state == true)
     {
-        cout << "The Stack is empty." << endl;
+        cout << "The Linked List is empty." << endl;
     }
     else
     {
-        cout << "The Stack is not empty." << endl;
+        cout << "The Linked List is not empty." << endl;
     }
 }
 
@@ -132,7 +137,7 @@ void Size(string& type)
         stack_size = stack_str.size();
     }
 
-    cout << "The current size of the Stack is " << stack_size << endl;
+    cout << "The current size of the Stack " << stack_size << endl;
 }
 
 /// Pushes the given value at top of the Stack
@@ -176,17 +181,32 @@ void Pop(string& type)
     }
     if(type == "int")
     {
+        if(stack_int.empty())
+        {
+            cout << "Unable to execute command. The Stack is empty." << endl;
+            return;
+        }
         stack_int.pop();
     }
     else if(type == "char")
     {
+        if(stack_char.empty())
+        {
+            cout << "The Stack is currently empty." << endl;
+            return;
+        }
         stack_char.pop();
     }
     else if(type == "string")
     {
+        if(stack_str.empty())
+        {
+            cout << "The Stack is currently empty." << endl;
+            return;
+        }
         stack_str.pop();
     }
-    cout << "The first element of the Vector has been removed successfully." << endl;
+    cout << "The first element has been removed successfully." << endl;
 }
 
 /// Returns a pointer to the beginning of the Stack
