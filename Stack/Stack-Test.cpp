@@ -101,11 +101,11 @@ void Empty(string& type)
 
     if(state == true)
     {
-        cout << "The Linked List is empty." << endl;
+        cout << "The Stack is empty." << endl;
     }
     else
     {
-        cout << "The Linked List is not empty." << endl;
+        cout << "The Stack is not empty." << endl;
     }
 }
 
