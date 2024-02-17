@@ -132,7 +132,7 @@ void Size(string& type)
         stack_size = stack_str.size();
     }
 
-    cout << "The current size of the Stack " << stack_size << endl;
+    cout << "The current size of the Stack is " << stack_size << endl;
 }
 
 /// Pushes the given value at top of the Stack
@@ -186,7 +186,7 @@ void Pop(string& type)
     {
         stack_str.pop();
     }
-    cout << "The first element has been popd successfully." << endl;
+    cout << "The first element of the Vector has been removed successfully." << endl;
 }
 
 /// Returns a pointer to the beginning of the Stack
