@@ -176,14 +176,29 @@ void Remove(string& type)
     }
     if(type == "int")
     {
+        if(list_int.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         list_int.remove();
     }
     else if(type == "char")
     {
+        if(list_char.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         list_char.remove();
     }
     else if(type == "string")
     {
+        if(list_str.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         list_str.remove();
     }
     cout << "The first element has been removed successfully." << endl;
@@ -200,14 +215,29 @@ void Begin(string& type)
     }
     if(type == "int")
     {
+        if(list_int.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         cout << "The beginning of the LinkedList is at " << list_int.begin() << endl;
     }
     else if(type == "char")
     {
+        if(list_char.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         cout << "The beginning of the LinkedList is at " << list_char.begin() << endl;
     }
     else if(type == "string")
     {
+        if(list_str.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         cout << "The beginning of the LinkedList is at " << list_str.begin() << endl;
     }
 }
@@ -223,14 +253,29 @@ void Front(string& type)
     }
     if(type == "int")
     {
+        if(list_int.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         cout << "The value of the first element is " << list_int.front() << endl;
     }
     else if(type == "char")
     {
+        if(list_char.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         cout << "The value of the first element is " << list_char.front() << endl;
     }
     else if(type == "string")
     {
+        if(list_str.empty())
+        {
+            cout << "Unable to execute command. The LinkedList is empty." << endl;
+            return;
+        }
         cout << "The value of the first element is " << list_str.front() << endl;
     }
 }
@@ -244,29 +289,41 @@ void InsertAt(string& type)
         cout << "There is no existing LinkedList." << endl;
         return;
     }
-
     if(type == "int")
     {
         int value;
-        int pos;
-        cin >> value >> pos;
-
-        list_int.insertAt(value, pos);
+        int idx;
+        cin >> value >> idx;
+        if(!(0 <= idx && idx < list_int.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        list_int.insertAt(value, idx);
     }
     else if(type == "char")
     {
         char value;
-        int pos;
-        cin >> value >> pos;
-
-        list_char.insertAt(value, pos);
+        int idx;
+        cin >> value >> idx;
+        if(!(0 <= idx && idx < list_char.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        list_char.insertAt(value, idx);
     }
     else if(type == "string")
     {
         string value;
-        int pos;
-        cin >> value >> pos;
-        list_str.insertAt(value, pos);
+        int idx;
+        cin >> value >> idx;
+        if(!(0 <= idx && idx < list_str.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        list_str.insertAt(value, idx);
     }
     cout << "The value has been added to given position of the LinkedList successfully." << endl;
 }
@@ -283,21 +340,36 @@ void RemoveAt(string& type)
 
     if(type == "int")
     {
-        int pos;
-        cin >> pos;
-        list_int.removeAt(pos);
+        int idx;
+        cin >> idx;
+        if(!(0 <= idx && idx < list_int.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        list_int.removeAt(idx);
     }
     else if(type == "char")
     {
-        int pos;
-        cin >> pos;
-        list_char.removeAt(pos);
+        int idx;
+        cin >> idx;
+        if(!(0 <= idx && idx < list_char.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        list_char.removeAt(idx);
     }
     else if(type == "string")
     {
-        int pos;
-        cin >> pos;
-        list_str.removeAt(pos);
+        int idx;
+        cin >> idx;
+        if(!(0 <= idx && idx < list_str.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        list_str.removeAt(idx);
     }
     cout << "The element has been removed from the given position successfully." << endl;
 }
@@ -313,30 +385,42 @@ void Access(string& type)
     }
     if(type == "int")
     {
-        int pos;
-        cin >> pos;
+        int idx;
+        cin >> idx;
+        if(!(0 <= idx && idx < list_int.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        int value = list_int.accessAt(idx);
 
-        int value = list_int.accessAt(pos);
-
-        cout << "The value at position " << pos << " is " << value << endl;
+        cout << "The value at position " << idx << " is " << value << endl;
     }
     else if(type == "char")
     {
-        int pos;
-        cin >> pos;
+        int idx;
+        cin >> idx;
+        if(!(0 <= idx && idx < list_char.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        char value = list_char.accessAt(idx);
 
-        char value = list_char.accessAt(pos);
-
-        cout << "The value at position " << pos << " is " << value << endl;
+        cout << "The value at position " << idx << " is " << value << endl;
     }
     else if(type == "string")
     {
-        int pos;
-        cin >> pos;
+        int idx;
+        cin >> idx;
+        if(!(0 <= idx && idx < list_str.size()))
+        {
+            cout << "Unable to execute command. The index is out of range." << endl;
+            return;
+        }
+        string value = list_str.accessAt(idx);
 
-        string value = list_str.accessAt(pos);
-
-        cout << "The value at position " << pos << " is " << value << endl;
+        cout << "The value at position " << idx << " is " << value << endl;
     }
 }
 
