@@ -65,10 +65,10 @@ I have implemented most of the commonly used commands for Stack. Here is a table
 |~Stack()|Destructor - Destructs the Stack|O(N)|O(1)|
 
 ## 4. How to use the tester?
-The tester can be found in the LinkedList-Test.cpp file. Compile the program. You will be greated with a message. Use the instructions below to use the tester right : ❓
+The tester can be found in the Stack-Test.cpp file. Compile the program. You will be greated with a message. Use the instructions below to use the tester right : ❓
 |Command|Semantic|
 |-------|--------|
-|create <Type>|Creates a Linked List with the given type (Works with "int", "char" and "string" only).|
+|create <Type>|Creates a Stack with the given type (Works with "int", "char" and "string" only).|
 |terminate|Terminates the tester.|
 |clear|Removes all elements from the Stack.|
 |empty|Returns true / false if the Stack is empty or not.|
